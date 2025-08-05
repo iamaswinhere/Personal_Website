@@ -10,10 +10,10 @@ body {
 }
 
 .developing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
   gap: 30px;
-  margin-top: 30px;
 }
 
 .developing-item {
