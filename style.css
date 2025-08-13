@@ -1,8 +1,8 @@
 :root{
-    --primary-color: 393646;
-    --secondary-color: 4F4557;
-    --tertiory-color: 6D5D6E;
-    --last-color: F4EEE0;
+	--primary-color: #393646;
+	--secondary-color: #4F4557;
+	--tertiory-color: #6D5D6E;
+	--last-color: #F4EEE0;
 }
 
 body {
@@ -108,6 +108,79 @@ body {
 .content p {
     font-size: 1.1em;
     margin-bottom: 30px;
+}
+
+/* Plans - pricing cards */
+.pricing-card {
+	background: #171717;
+	border: 1px solid rgba(255,255,255,0.06);
+	border-radius: 16px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+	cursor: pointer;
+	position: relative;
+}
+
+.pricing-card .price {
+	font-size: 2rem;
+	background: linear-gradient(135deg, var(--last-color), var(--tertiory-color));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.pricing-card .feature-list li {
+	margin: 10px 0;
+	position: relative;
+	padding-left: 26px;
+	color: #ddd;
+}
+
+.pricing-card .feature-list li::before {
+	content: '✔';
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--last-color);
+}
+
+.pricing-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 16px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05) inset;
+	border-color: var(--secondary-color);
+}
+
+.pricing-card.featured {
+	border-color: var(--secondary-color);
+	box-shadow: 0 18px 50px rgba(79,69,87,0.25);
+}
+
+.pricing-badge {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: linear-gradient(135deg, var(--secondary-color), var(--tertiory-color));
+	color: #fff;
+	font-size: 0.75rem;
+	letter-spacing: .5px;
+	padding: 6px 10px;
+	border-radius: 999px;
+	border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* CTA button override to match palette */
+.plan-cta {
+	background: #007bff !important;
+	border: none;
+	color: #fff;
+}
+
+.plan-cta:hover {
+	background: #0062cc !important;
+}
+
+/* Wider content only for plans */
+#plans .content {
+	max-width: 1100px;
 }
 
 .project-grid {
