@@ -91,6 +91,22 @@ socialButtons.forEach((element) => {
     handleCursorActivation(element, true, 'hover-social');
 });
 
+const planCTAs = document.querySelectorAll('.plan-cta');
+const contactSubjectInput = document.getElementById('contact-subject');
+
+planCTAs.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const planName = this.dataset.plan;
+        if (contactSubjectInput) {
+            contactSubjectInput.value = `Inquiry about ${planName} Plan`;
+        }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 particlesJS('particles-js', {
     "particles": {
         "number": {
